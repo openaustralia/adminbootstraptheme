@@ -16,21 +16,21 @@
 </div>
 
 <% last_date = nil %>
-<% for event in @events %>
-    <% if last_date != event.created_at.to_date %>
+<% for event, event_at in @events %>
+    <% if last_date != event_at.to_date %>
         <% if last_date.nil? %>
             <p>
         <% end %>
-        <h3><%= simple_date(event.created_at) %></h3>
+        <h3><%= simple_date(event_at) %></h3>
         <p>
     <% else %>
         <br>
     <% end %>
-    <% last_date = event.created_at.to_date %>
+    <% last_date = event_at.to_date %>
 
-    <%= simple_time(event.created_at) %>
+    <%= simple_time(event_at) %>
 
-    <% if event.class.to_s == 'InfoRequestEvent' %>
+    <% if event.is_a? InfoRequestEvent %>
         <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(event.info_request), :title => "view full details")%>
         <%= link_to(event.info_request.title, main_url(request_url(event.info_request)), :title => "view request on public website")%>
 
@@ -101,6 +101,7 @@
         was created/updated by administrator <strong><%=h event.last_edit_editor %></strong>
     <% end %>
 <% end %>
+<%= will_paginate(@events, :class => 'paginator') %>
 <% if not @events.empty? %>
 </p>
 <% end %>
