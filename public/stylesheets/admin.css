@@ -8,6 +8,8 @@ body.admin { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-se
 */
 .entirebody, #banner { padding-top: 50px; }
 
+#special-notice { margin-top: 50px; }
+
 .admin { /* Allow for input prepend/append in search forms */ /* White icons with optional class, or on hover/active states of certain elements */ /* move down carets for tabs */ @-webkit-keyframes progress-bar-stripes { from { background-position: 40px 0; }
   to { background-position: 0 0; } }
  @-moz-keyframes progress-bar-stripes { from { background-position: 40px 0; }
