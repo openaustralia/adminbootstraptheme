@@ -64,7 +64,7 @@
             <% for @request in @error_message_requests %>
               <tr>
                 <td class="link">
-                  <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
+                  <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_request_show_url(@request))%>
                   <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
@@ -90,7 +90,7 @@
             <% for @request in @attention_requests %>
               <tr>
                 <td class="link">
-                  <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
+                  <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_request_show_url(@request))%>
                   <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
@@ -115,7 +115,7 @@
             <% for @request in @requires_admin_requests %>
               <tr>
                 <td class="link">
-                  <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
+                  <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_request_show_url(@request))%>
                   <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
@@ -165,7 +165,7 @@
             <% for @request in @old_unclassified %>
                 <tr>
                   <td class="link">
-                    <%= link_to("<i class='icon-tags'></i>".html_safe, request_admin_url(@request)) %>
+                    <%= link_to("<i class='icon-tags'></i>".html_safe, admin_request_show_url(@request)) %>
                     <%= link_to(@request.title, request_url(@request)) %>
                   </td>
                   <td class="span2">
