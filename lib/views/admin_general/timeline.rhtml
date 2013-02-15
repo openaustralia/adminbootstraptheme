@@ -32,7 +32,7 @@
 
     <% if event.is_a? InfoRequestEvent %>
         <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(event.info_request), :title => "view full details")%>
-        <%= link_to(event.info_request.title, main_url(request_url(event.info_request)), :title => "view request on public website")%>
+        <%= link_to(event.info_request.title, request_url(event.info_request), :title => "view request on public website")%>
 
         <% if event.event_type == 'edit' %>
             was edited by administrator <strong><%=h event.params[:editor] %></strong>.
@@ -79,7 +79,7 @@
          <% elsif event.event_type == 'response' %>
             <% incoming_message = event.incoming_message %>
             received
-            <%= link_to 'a response', main_url(incoming_message_url(incoming_message)) %>
+            <%= link_to 'a response', incoming_message_url(incoming_message) %>
             from <%=h event.info_request.public_body.name %>.
         <% elsif event.event_type == 'sent' %>
             was initially sent to <%=h event.params[:email]%> at <%=h event.info_request.public_body.name %>.
@@ -96,7 +96,7 @@
         <% end %>
     <% else %>
         <%= link_to('<i class="icon-tags"></i>'.html_safe, public_body_admin_url(event.public_body), :title => "view full details")%>
-        <%= link_to(event.public_body.name, main_url(public_body_url(event.public_body)), :title => "view authority on public website")%>
+        <%= link_to(event.public_body.name, public_body_url(event.public_body), :title => "view authority on public website")%>
         was created/updated by administrator <strong><%=h event.last_edit_editor %></strong>
     <% end %>
 <% end %>

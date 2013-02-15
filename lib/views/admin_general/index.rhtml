@@ -65,7 +65,7 @@
               <tr>
                 <td class="link">
                   <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
-                  <%= link_to(@request.title, main_url(request_url(@request))) %>
+                  <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
                   <%=simple_date(@request.get_last_event.created_at)%>
@@ -91,7 +91,7 @@
               <tr>
                 <td class="link">
                   <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
-                  <%= link_to(@request.title, main_url(request_url(@request))) %>
+                  <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
                   <%=simple_date(@request.get_last_event.created_at)%>
@@ -116,7 +116,7 @@
               <tr>
                 <td class="link">
                   <%= link_to('<i class="icon-tags"></i>'.html_safe, request_admin_url(@request))%>
-                  <%= link_to(@request.title, main_url(request_url(@request))) %>
+                  <%= link_to(@request.title, request_url(@request)) %>
                 </td>
                 <td class="span2">
                   <%=simple_date(@request.get_last_event.created_at)%>
@@ -141,7 +141,7 @@
               <tr>
                 <td class="link">
                   <%= link_to('<i class="icon-tags"></i>'.html_safe, public_body_admin_url(@blank_contact))%>
-                  <%= link_to h(@blank_contact.name), main_url(public_body_url(@blank_contact)) %>
+                  <%= link_to h(@blank_contact.name), public_body_url(@blank_contact) %>
                 </td>
                 <td class="span2">
                   <%=simple_date(@blank_contact.updated_at)%>
@@ -166,7 +166,7 @@
                 <tr>
                   <td class="link">
                     <%= link_to("<i class='icon-tags'></i>".html_safe, request_admin_url(@request)) %>
-                    <%= link_to(@request.title, main_url(request_link(@request))) %>
+                    <%= link_to(@request.title, request_url(@request)) %>
                   </td>
                   <td class="span2">
                     <%=simple_date(@request.get_last_response_event.created_at)%>
