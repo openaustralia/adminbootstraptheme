@@ -346,7 +346,7 @@
                 <td colspan="2">
                  By <%= link_to("<i class='icon-eye-open'></i>".html_safe, user_path(comment.user), :title => "view user's page on public website") %>
 
-                  <%= link_to(h(comment.user.name), user_admin_url(comment.user)) %>
+                  <%= link_to(h(comment.user.name), admin_user_show_url(comment.user)) %>
                 </td>
               </tr>
               <% comment.for_admin_column do |name, value, type, column_name |%>
