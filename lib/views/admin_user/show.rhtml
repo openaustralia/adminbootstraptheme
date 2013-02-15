@@ -49,7 +49,7 @@
 </table>
 
 <%= link_to 'Edit', '../edit/' + @admin_user.id.to_s, :class => "btn btn-primary" %>
-<%= link_to 'Public page', user_url(@admin_user), :class => "btn" %>
+<%= link_to 'Public page', user_path(@admin_user), :class => "btn" %>
 <%= link_to "Log in as #{@admin_user.name} (also confirms their email)", "../login_as/#{@admin_user.id}", :class => "btn btn-info" %>
 </p>
 
@@ -75,7 +75,7 @@
   <td><%=h post_redirect.id %></td>
   <% for column in PostRedirect.content_columns.map { |c| c.name } %>
     <% if column == 'email_token' %>
-     <td><%=link_to post_redirect.send(column), confirm_url(:email_token => post_redirect.send(column)) %></td>
+     <td><%=link_to post_redirect.send(column), confirm_path(:email_token => post_redirect.send(column)) %></td>
     <% else %>
     <td><%=h post_redirect.send(column) %></td>
     <% end %>

@@ -31,8 +31,8 @@
     <%= simple_time(event_at) %>
 
     <% if event.is_a? InfoRequestEvent %>
-        <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_request_show_url(event.info_request), :title => "view full details")%>
-        <%= link_to(event.info_request.title, request_url(event.info_request), :title => "view request on public website")%>
+        <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_request_show_path(event.info_request), :title => "view full details")%>
+        <%= link_to(event.info_request.title, request_path(event.info_request), :title => "view request on public website")%>
 
         <% if event.event_type == 'edit' %>
             was edited by administrator <strong><%=h event.params[:editor] %></strong>.
@@ -95,8 +95,8 @@
             had '<%=event.event_type%>' done to it, parameters <%=h event.params_yaml%>.
         <% end %>
     <% else %>
-        <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_body_show_url(event.public_body), :title => "view full details")%>
-        <%= link_to(event.public_body.name, public_body_url(event.public_body), :title => "view authority on public website")%>
+        <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_body_show_path(event.public_body), :title => "view full details")%>
+        <%= link_to(event.public_body.name, public_body_path(event.public_body), :title => "view authority on public website")%>
         was created/updated by administrator <strong><%=h event.last_edit_editor %></strong>
     <% end %>
 <% end %>
