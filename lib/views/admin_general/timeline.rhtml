@@ -95,7 +95,7 @@
             had '<%=event.event_type%>' done to it, parameters <%=h event.params_yaml%>.
         <% end %>
     <% else %>
-        <%= link_to('<i class="icon-tags"></i>'.html_safe, public_body_admin_url(event.public_body), :title => "view full details")%>
+        <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_body_show_url(event.public_body), :title => "view full details")%>
         <%= link_to(event.public_body.name, public_body_url(event.public_body), :title => "view authority on public website")%>
         was created/updated by administrator <strong><%=h event.last_edit_editor %></strong>
     <% end %>

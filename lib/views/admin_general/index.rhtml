@@ -140,7 +140,7 @@
             <% for @blank_contact in @blank_contacts %>
               <tr>
                 <td class="link">
-                  <%= link_to('<i class="icon-tags"></i>'.html_safe, public_body_admin_url(@blank_contact))%>
+                  <%= link_to('<i class="icon-tags"></i>'.html_safe, admin_body_show_url(@blank_contact))%>
                   <%= link_to h(@blank_contact.name), public_body_url(@blank_contact) %>
                 </td>
                 <td class="span2">
